@@ -3,403 +3,1016 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>MD Amirul Islam | Researcher</title>
 
+    <meta name="description" content="Official academic website of MD Amirul Islam, an interdisciplinary researcher in social sciences, Japanese and Asian studies.">
+
     <style>
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             line-height: 1.7;
-            color: #222;
-            background: #f7f9fc;
+            color: #263238;
+            background: #f5f7fa;
         }
+
+        /* =========================
+           NAVIGATION
+        ========================== */
 
         nav {
             background: #12355b;
-            padding: 18px 8%;
+            padding: 17px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
         }
 
-        nav .logo {
+        .logo {
             color: white;
             font-size: 22px;
-            font-weight: bold;
+            font-weight: 700;
+            letter-spacing: 0.2px;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 25px;
+            gap: 26px;
         }
 
         nav ul li a {
             color: white;
             text-decoration: none;
             font-size: 15px;
+            transition: 0.3s;
         }
 
         nav ul li a:hover {
-            color: #9ed8ff;
+            color: #a9d9ff;
         }
 
+        /* =========================
+           HERO
+        ========================== */
+
         .hero {
-            background: white;
+            background: linear-gradient(135deg, #f7faff 0%, #ffffff 100%);
+            min-height: 620px;
             padding: 90px 8%;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 50px;
+            gap: 70px;
         }
 
         .hero-text {
-            max-width: 700px;
+            max-width: 760px;
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 54px;
+            line-height: 1.15;
             color: #12355b;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
         }
 
         .hero h2 {
             font-size: 23px;
-            font-weight: normal;
-            color: #555;
-            margin-bottom: 20px;
+            font-weight: 400;
+            color: #52616b;
+            margin-bottom: 25px;
         }
 
         .hero p {
             font-size: 17px;
-            color: #555;
+            color: #4c5963;
+            max-width: 720px;
         }
 
-        .profile-placeholder {
-            width: 210px;
-            height: 210px;
-            border-radius: 50%;
-            background: #e8eef5;
+        .hero-buttons {
+            margin-top: 30px;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #777;
-            text-align: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 23px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .button-primary {
+            background: #12355b;
+            color: white;
+        }
+
+        .button-primary:hover {
+            background: #1d5d91;
+        }
+
+        .button-outline {
+            border: 1px solid #12355b;
+            color: #12355b;
+            background: white;
+        }
+
+        .button-outline:hover {
+            background: #12355b;
+            color: white;
+        }
+
+        /* =========================
+           PROFILE PHOTO
+        ========================== */
+
+        .profile-photo {
+            width: 245px;
+            height: 245px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            border: 7px solid white;
+            box-shadow: 0 8px 30px rgba(18,53,91,0.20);
             flex-shrink: 0;
         }
 
+        /* =========================
+           GENERAL SECTIONS
+        ========================== */
+
         section {
-            padding: 70px 8%;
+            padding: 75px 8%;
             background: white;
-            margin-top: 2px;
         }
 
-        section:nth-child(even) {
+        section:nth-of-type(even) {
             background: #f7f9fc;
         }
 
-        .section-title {
-            font-size: 32px;
-            color: #12355b;
-            margin-bottom: 25px;
+        .section-container {
+            max-width: 1150px;
+            margin: auto;
         }
+
+        .section-title {
+            font-size: 34px;
+            color: #12355b;
+            margin-bottom: 12px;
+        }
+
+        .section-line {
+            width: 55px;
+            height: 4px;
+            background: #12355b;
+            margin-bottom: 30px;
+            border-radius: 5px;
+        }
+
+        section p {
+            font-size: 16px;
+            color: #4c5963;
+            max-width: 950px;
+        }
+
+        /* =========================
+           RESEARCH CARDS
+        ========================== */
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+            gap: 24px;
+            margin-top: 35px;
         }
 
         .card {
             background: white;
-            padding: 25px;
+            padding: 28px;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            border: 1px solid #edf0f3;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 9px 25px rgba(0,0,0,0.10);
         }
 
         .card h3 {
             color: #12355b;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-size: 20px;
         }
 
-        .publications li {
-            margin-bottom: 18px;
+        .card p {
+            font-size: 15px;
         }
+
+        /* =========================
+           PUBLICATIONS
+        ========================== */
+
+        .publication {
+            padding: 24px 0;
+            border-bottom: 1px solid #e5e8eb;
+        }
+
+        .publication:last-child {
+            border-bottom: none;
+        }
+
+        .publication-title {
+            color: #1e2f3d;
+            font-size: 17px;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .publication-journal {
+            color: #68757e;
+            font-style: italic;
+            margin-top: 7px;
+        }
+
+        .publication a {
+            display: inline-block;
+            margin-top: 8px;
+            color: #12355b;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .publication a:hover {
+            text-decoration: underline;
+        }
+
+        /* =========================
+           ACADEMIC PROFILES
+        ========================== */
 
         .profile-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 25px;
+            gap: 14px;
+            margin-top: 30px;
         }
 
         .profile-links a {
             background: #12355b;
             color: white;
-            padding: 10px 18px;
+            padding: 11px 18px;
             border-radius: 6px;
             text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
         }
 
         .profile-links a:hover {
             background: #1d5d91;
+            transform: translateY(-2px);
         }
 
-        .cv-button {
-            display: inline-block;
-            margin-top: 20px;
-            background: #12355b;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 6px;
+        /* =========================
+           CV
+        ========================== */
+
+        .cv-box {
+            background: #f5f8fb;
+            border-left: 5px solid #12355b;
+            padding: 30px;
+            border-radius: 5px;
+            margin-top: 25px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact-list {
+            margin-top: 25px;
+            list-style: none;
+        }
+
+        .contact-list li {
+            margin-bottom: 14px;
+            font-size: 16px;
+        }
+
+        .contact-list a {
+            color: #12355b;
             text-decoration: none;
         }
+
+        .contact-list a:hover {
+            text-decoration: underline;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
 
         footer {
             background: #12355b;
             color: white;
             text-align: center;
-            padding: 25px;
+            padding: 30px 8%;
         }
 
-        @media (max-width: 768px) {
+        footer p {
+            color: #dce8f2;
+            font-size: 14px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 800px) {
+
             nav {
                 flex-direction: column;
                 gap: 15px;
+                padding: 18px 5%;
             }
 
             nav ul {
                 flex-wrap: wrap;
                 justify-content: center;
+                gap: 15px;
             }
 
             .hero {
                 flex-direction: column-reverse;
                 text-align: center;
+                padding: 65px 6%;
+                gap: 35px;
             }
 
             .hero h1 {
-                font-size: 36px;
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .profile-photo {
+                width: 210px;
+                height: 210px;
+            }
+
+            section {
+                padding: 60px 6%;
+            }
+
+            .section-title {
+                font-size: 30px;
             }
         }
+
+        @media (max-width: 480px) {
+
+            .logo {
+                font-size: 19px;
+            }
+
+            nav ul li a {
+                font-size: 13px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .profile-photo {
+                width: 185px;
+                height: 185px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
     </style>
 </head>
 
 <body>
 
+<!-- =========================
+     NAVIGATION
+========================== -->
+
 <nav>
-    <div class="logo">MD Amirul Islam</div>
+
+    <div class="logo">
+        MD Amirul Islam
+    </div>
 
     <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#research">Research</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#profiles">Profiles</a></li>
         <li><a href="#cv">CV</a></li>
         <li><a href="#contact">Contact</a></li>
     </ul>
+
 </nav>
 
+
+<!-- =========================
+     HERO
+========================== -->
+
 <section class="hero">
+
     <div class="hero-text">
+
         <h1>MD Amirul Islam</h1>
 
-        <h2>Researcher | Social Sciences | Japanese & Asian Studies</h2>
+        <h2>
+            Researcher | Social Sciences | Japanese & Asian Studies
+        </h2>
 
         <p>
-            Welcome to my academic website. I am a researcher interested in
-            interdisciplinary research across social sciences, culture,
-            marriage and family studies, digital violence, and Asian studies.
+            I am an interdisciplinary researcher with interests in social
+            sciences, anthropology, sociology, cultural studies, marriage
+            and family studies, gender and digital violence, bibliometric
+            research, and Japanese and Asian studies.
         </p>
+
+        <div class="hero-buttons">
+
+            <a href="#about" class="button button-primary">
+                About Me
+            </a>
+
+            <a href="#publications" class="button button-outline">
+                View Publications
+            </a>
+
+        </div>
+
     </div>
 
-    <div class="profile-placeholder">
-        Your Photo
-    </div>
+
+    <img
+        src="IMG-20250815-WA0032.jpg"
+        alt="MD Amirul Islam"
+        class="profile-photo"
+    >
+
 </section>
+
+
+<!-- =========================
+     ABOUT
+========================== -->
 
 <section id="about">
-    <h2 class="section-title">About Me</h2>
 
-    <p>
-        I am an interdisciplinary researcher with research interests spanning
-        social sciences, anthropology, sociology, cultural studies, marriage
-        and family studies, and Asian studies. My research combines
-        quantitative, qualitative, bibliometric, and spatial approaches to
-        investigate contemporary social and cultural issues.
-    </p>
+    <div class="section-container">
 
-    <br>
+        <h2 class="section-title">
+            About Me
+        </h2>
 
-    <p>
-        I am currently pursuing advanced academic studies in Japanese and
-        Asian Studies and developing research projects that connect
-        South Asian realities with broader interdisciplinary scholarship.
-    </p>
+        <div class="section-line"></div>
+
+        <p>
+            I am an interdisciplinary researcher working across the social
+            sciences and Asian studies. My academic interests include
+            marriage and family studies, child marriage, forced marriage,
+            gender-based violence, digital violence, cultural studies,
+            bibliometric analysis, and contemporary social issues.
+        </p>
+
+        <br>
+
+        <p>
+            My research employs quantitative, qualitative, bibliometric,
+            spatial, and mixed-method approaches to investigate complex
+            social and cultural phenomena. I am particularly interested
+            in connecting empirical research from Bangladesh and South Asia
+            with broader international scholarship.
+        </p>
+
+        <br>
+
+        <p>
+            I am currently pursuing advanced academic studies in
+            Japanese and Asian Studies and developing interdisciplinary
+            research at the intersection of society, culture, language,
+            and contemporary social issues.
+        </p>
+
+    </div>
+
 </section>
 
+
+<!-- =========================
+     RESEARCH
+========================== -->
+
 <section id="research">
-    <h2 class="section-title">Research Interests</h2>
 
-    <div class="cards">
+    <div class="section-container">
 
-        <div class="card">
-            <h3>Marriage & Family Studies</h3>
-            <p>
-                Child marriage, forced marriage, contract marriage,
-                family dynamics, and marital relationships.
-            </p>
-        </div>
+        <h2 class="section-title">
+            Research Interests
+        </h2>
 
-        <div class="card">
-            <h3>Gender & Digital Violence</h3>
-            <p>
-                Sexual harassment, technology-facilitated violence,
-                online dating violence, and gender-based violence.
-            </p>
-        </div>
+        <div class="section-line"></div>
 
-        <div class="card">
-            <h3>Bibliometric Research</h3>
-            <p>
-                Science mapping, bibliometric analysis, research trends,
-                thematic evolution, and knowledge structures.
-            </p>
-        </div>
+        <div class="cards">
 
-        <div class="card">
-            <h3>Asian Studies</h3>
-            <p>
-                Japanese studies, South Asian society, culture,
-                language, and intercultural research.
-            </p>
+            <div class="card">
+
+                <h3>
+                    Marriage & Family Studies
+                </h3>
+
+                <p>
+                    Child marriage, forced marriage, contract marriage,
+                    family dynamics, marital relationships, and
+                    life-course perspectives.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Gender & Digital Violence
+                </h3>
+
+                <p>
+                    Sexual harassment, gender-based violence,
+                    technology-facilitated violence, online dating
+                    violence, and digital abuse.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Bibliometric Research
+                </h3>
+
+                <p>
+                    Bibliometric analysis, science mapping, research
+                    trends, thematic evolution, citation analysis,
+                    and knowledge structures.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Asian Studies
+                </h3>
+
+                <p>
+                    Japanese studies, South Asian society and culture,
+                    language, intercultural studies, and contemporary
+                    Asian societies.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Spatial & Quantitative Research
+                </h3>
+
+                <p>
+                    GIS and spatial mapping, statistical analysis,
+                    survey research, demographic analysis, and
+                    mixed-method research.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Culture & Language
+                </h3>
+
+                <p>
+                    Bengali language and culture, Sanskrit influence,
+                    translation, intercultural communication, and
+                    socio-cultural studies.
+                </p>
+
+            </div>
+
         </div>
 
     </div>
+
 </section>
 
+
+<!-- =========================
+     PUBLICATIONS
+========================== -->
+
 <section id="publications">
-    <h2 class="section-title">Selected Publications</h2>
 
-    <ul class="publications">
+    <div class="section-container">
 
-        <li>
-            <strong>Visualization of Scopus and WOS data (2000–2024)
-            on Forced, Child, and Contract Marriage: A Bibliometric Analysis.</strong>
-            <br>
-            <em>SN Social Sciences.</em>
-        </li>
+        <h2 class="section-title">
+            Selected Publications
+        </h2>
 
-        <li>
-            <strong>
+        <div class="section-line"></div>
+
+
+        <div class="publication">
+
+            <div class="publication-title">
+
+                Visualization of Scopus and WOS data (2000–2024)
+                on Forced, Child, and Contract Marriage:
+                A Bibliometric Analysis.
+
+            </div>
+
+            <div class="publication-journal">
+                SN Social Sciences.
+            </div>
+
+        </div>
+
+
+        <div class="publication">
+
+            <div class="publication-title">
+
                 Mapping power and strategy in the Indo-Pacific:
                 a bibliometric analysis of geopolitics, policy,
                 and regional development.
-            </strong>
-            <br>
-            <em>Cogent Social Sciences.</em>
-        </li>
 
-        <li>
-            <strong>
-                The Effectiveness of Metaphors and Similes in the English
-                Translation of Bengali Traditional Animal Names:
+            </div>
+
+            <div class="publication-journal">
+                Cogent Social Sciences.
+            </div>
+
+        </div>
+
+
+        <div class="publication">
+
+            <div class="publication-title">
+
+                The Effectiveness of Metaphors and Similes in the
+                English Translation of Bengali Traditional Animal Names:
                 A Socio-Pragmatic Approach.
-            </strong>
-            <br>
-            <em>Cogent Arts & Humanities.</em>
-        </li>
 
-    </ul>
+            </div>
+
+            <div class="publication-journal">
+                Cogent Arts & Humanities.
+            </div>
+
+        </div>
+
+
+        <div class="publication">
+
+            <div class="publication-title">
+
+                Research on contemporary social, cultural, gender,
+                marriage, and family-related issues using
+                interdisciplinary and bibliometric approaches.
+
+            </div>
+
+            <div class="publication-journal">
+                Selected research and ongoing scholarly work.
+            </div>
+
+        </div>
+
+
+        <p style="margin-top:25px;">
+            A complete list of publications is available through my
+            academic profiles below.
+        </p>
+
+    </div>
+
 </section>
+
+
+<!-- =========================
+     PROJECTS
+========================== -->
 
 <section id="projects">
-    <h2 class="section-title">Research Projects</h2>
 
-    <div class="cards">
+    <div class="section-container">
 
-        <div class="card">
-            <h3>Child Marriage in Bangladesh</h3>
-            <p>
-                National-level visualization and local realities of
-                child marriage in Bangladesh using mixed methods
-                and spatial mapping.
-            </p>
-        </div>
+        <h2 class="section-title">
+            Research Projects
+        </h2>
 
-        <div class="card">
-            <h3>Sexual Harassment of Adolescent Girls</h3>
-            <p>
-                Bibliometric analysis and empirical investigation
-                of sexual harassment among adolescent girls.
-            </p>
-        </div>
+        <div class="section-line"></div>
 
-        <div class="card">
-            <h3>Sanskrit Influence in Bangladesh</h3>
-            <p>
-                Research investigating historical and contemporary
-                traces of Sanskrit influence in Bangladesh.
-            </p>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>
+                    Child Marriage in Bangladesh
+                </h3>
+
+                <p>
+                    National-level visualization and local realities
+                    of child marriage in Bangladesh using mixed methods,
+                    spatial mapping, and empirical investigation.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Sexual Harassment of Adolescent Girls
+                </h3>
+
+                <p>
+                    Bibliometric analysis and empirical investigation
+                    of sexual harassment among adolescent girls,
+                    with a focus on social and contextual factors.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Sanskrit Influence in Bangladesh
+                </h3>
+
+                <p>
+                    Investigation of historical and contemporary
+                    traces of Sanskrit influence in Bangladesh,
+                    language, culture, and society.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+                    Climate Change & Adaptation
+                </h3>
+
+                <p>
+                    Research examining climate perceptions, climate
+                    impacts, adaptation strategies, and barriers
+                    among farming communities in Bangladesh.
+                </p>
+
+            </div>
+
         </div>
 
     </div>
+
 </section>
+
+
+<!-- =========================
+     ACADEMIC PROFILES
+========================== -->
+
+<section id="profiles">
+
+    <div class="section-container">
+
+        <h2 class="section-title">
+            Academic Profiles
+        </h2>
+
+        <div class="section-line"></div>
+
+        <p>
+            You can find my academic publications, research output,
+            citation information, and researcher identifiers through
+            the following platforms.
+        </p>
+
+
+        <div class="profile-links">
+
+            <a
+                href="https://scholar.google.com/citations?user=9xUhixcAAAAJ&hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Google Scholar
+            </a>
+
+
+            <a
+                href="https://orcid.org/0009-0004-2969-3645"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                ORCID
+            </a>
+
+
+            <a
+                href="https://www.scopus.com/pages/authors/60086230900"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Scopus
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CV
+========================== -->
 
 <section id="cv">
-    <h2 class="section-title">Curriculum Vitae</h2>
 
-    <p>
-        For a detailed overview of my academic background,
-        publications, research experience, and conference presentations,
-        please see my CV.
-    </p>
+    <div class="section-container">
 
-    <a class="cv-button" href="#" target="_blank">
-        Download CV
-    </a>
-</section>
+        <h2 class="section-title">
+            Curriculum Vitae
+        </h2>
 
-<section id="contact">
-    <h2 class="section-title">Contact</h2>
+        <div class="section-line"></div>
 
-    <p>
-        I welcome academic collaborations, research discussions,
-        and scholarly communication.
-    </p>
 
-    <br>
+        <div class="cv-box">
 
-    <p>
-        <strong>Email:</strong>
-        your-email@example.com
-    </p>
+            <p>
+                My academic CV includes information about my education,
+                research experience, publications, conference
+                presentations, academic activities, and research skills.
+            </p>
 
-    <div class="profile-links">
+            <br>
 
-        <a href="#" target="_blank">Google Scholar</a>
+            <p>
+                A downloadable CV will be added here.
+            </p>
 
-        <a href="#" target="_blank">ORCID</a>
-
-        <a href="#" target="_blank">Scopus</a>
-
-        <a href="#" target="_blank">ResearchGate</a>
+        </div>
 
     </div>
+
 </section>
 
+
+<!-- =========================
+     CONTACT
+========================== -->
+
+<section id="contact">
+
+    <div class="section-container">
+
+        <h2 class="section-title">
+            Contact
+        </h2>
+
+        <div class="section-line"></div>
+
+        <p>
+            I welcome academic collaboration, research discussions,
+            scholarly communication, and opportunities for
+            interdisciplinary research.
+        </p>
+
+
+        <ul class="contact-list">
+
+            <li>
+                <strong>Email:</strong>
+                <a href="mailto:amirulislam6430@gmail.com">
+                    amirulislam6430@gmail.com
+                </a>
+            </li>
+
+
+            <li>
+                <strong>Google Scholar:</strong>
+                <a
+                    href="https://scholar.google.com/citations?user=9xUhixcAAAAJ&hl=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    View Profile
+                </a>
+            </li>
+
+
+            <li>
+                <strong>ORCID:</strong>
+                <a
+                    href="https://orcid.org/0009-0004-2969-3645"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    0009-0004-2969-3645
+                </a>
+            </li>
+
+
+            <li>
+                <strong>Scopus Author ID:</strong>
+                <a
+                    href="https://www.scopus.com/pages/authors/60086230900"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    60086230900
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================== -->
+
 <footer>
-    © 2026 MD Amirul Islam. All rights reserved.
+
+    <p>
+        © 2026 MD Amirul Islam. All rights reserved.
+    </p>
+
+    <p style="margin-top:6px;">
+        Academic & Personal Website
+    </p>
+
 </footer>
+
 
 </body>
 </html>
